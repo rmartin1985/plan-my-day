@@ -19,9 +19,11 @@ var displayPlaces = function(lat, lon) {
     fetch(apiCall)
     .then(function(response){
         return response.json();
+        
     })
     .then(function(response){
         //printing out to the page the names things
+        console.log(response);
         for (var i = 0; i < response.length; i++) {
 
             var infoEl = document.getElementById('info');
