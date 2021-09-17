@@ -3,35 +3,14 @@ var textEl = document.getElementById('city');
 // Selecting the button element 
 var buttonEl = document.getElementById('userInput');
 
+// Selecte the checkboxs to check if they are clicked
+var museumsEl = document.getElementById('museums');
+var restaurantsEl = document.getElementById('restaurants');
+var barsEl = document.getElementById('bars');
+var monumentsEl = document.getElementById('monuments');
+
 // Adding an event listenr to the button upon click which will display info based on the user input 
 buttonEl.addEventListener("click", getUserInput);
-
-// Function that will be used to display places on the page 
-// takes as argument lat and lon 
-var displayPlaces = function(lat, lon) {
-
-    // Making an API call based on Lat and Lon from the user's City
-    // The API Call displays the top 25 things in 25 miles from the lat,lon
-    // API Call can filter based on popularity I have choosen only the most popular
-    apiCall = 'https://api.opentripmap.com/0.1/en/places/radius?radius=40233&lon=' + lon + '&lat=' + lat + '&rate=3&format=json&limit=25&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b';
-
-    // turning the api call into json
-    fetch(apiCall)
-    .then(function(response){
-        return response.json();
-        
-    })
-    .then(function(response){
-        //printing out to the page the names things
-        console.log(response);
-        for (var i = 0; i < response.length; i++) {
-
-            var infoEl = document.getElementById('info');
-    
-            infoEl.innerHTML += '<h2>' + response[i].name + '</h2>';
-        }
-    })
-}
 
 // Function called when the button is clicked 
 function getUserInput() {
@@ -44,12 +23,119 @@ function getUserInput() {
         return response.json();
     })
     .then(function(response){
-
         //Pulling the lat and lon values to be used in another API call
         lat = response.lat;
         lon = response.lon; 
         
         //Calling the function to display places based on the lat and lon of the city name
         displayPlaces(lat, lon);
+    })
+}
+
+var displayPlaces = function(lat, lon) {
+
+    if (museumsEl.checked === true) {
+        displayMuseums();
+    }
+    if (restaurantsEl.checked === true) {
+        displayRestaurants();
+    } 
+    if (barsEl.checked === true) {
+        displayBars();
+    }
+    if (monumentsEl.checked === true) {
+        displayMonuments();
+    }
+}
+
+var displayMuseums = function() {
+    apiCall = 'https://api.opentripmap.com/0.1/en/places/radius?radius=40233&lon=' 
+    + lon 
+    + '&lat=' + lat + 
+    '&kinds=museums&rate=3&format=json&limit=5&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b';
+    
+    // turning the api call into json
+    fetch(apiCall)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(response){
+        //printing out to the page the names things
+        console.log(response);
+        for (var i = 0; i < response.length; i++) {
+
+            var infoEl = document.getElementById('museums-div');
+    
+            infoEl.innerHTML += '<h2>' + response[i].name + '</h2>';
+        }
+    })
+}
+
+displayRestaurants = function() {
+    apiCall = 'https://api.opentripmap.com/0.1/en/places/radius?radius=40233&lon=' 
+    + lon 
+    + '&lat=' + lat + 
+    '&kinds=restaurants&rate=3&format=json&limit=5&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b';
+    
+    // turning the api call into json
+    fetch(apiCall)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(response){
+        //printing out to the page the names things
+        console.log(response);
+        for (var i = 0; i < response.length; i++) {
+
+            var infoEl = document.getElementById('restaurants-div');
+    
+            infoEl.innerHTML += '<h2>' + response[i].name + '</h2>';
+        }
+    })
+}
+
+displayBars = function() {
+    apiCall = 'https://api.opentripmap.com/0.1/en/places/radius?radius=40233&lon=' 
+    + lon 
+    + '&lat=' + lat + 
+    '&kinds=bars&rate=3&format=json&limit=5&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b';
+    
+    // turning the api call into json
+    fetch(apiCall)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(response){
+        //printing out to the page the names things
+        console.log(response);
+        for (var i = 0; i < response.length; i++) {
+
+            var infoEl = document.getElementById('bars-div');
+    
+            infoEl.innerHTML += '<h2>' + response[i].name + '</h2>';
+        }
+    })
+}
+
+displayMonuments = function() {
+    apiCall = 'https://api.opentripmap.com/0.1/en/places/radius?radius=40233&lon=' 
+    + lon 
+    + '&lat=' + lat + 
+    '&kinds=monuments&rate=3&format=json&limit=5&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b';
+    
+    // turning the api call into json
+    fetch(apiCall)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(response){
+        //printing out to the page the names things
+        console.log(response);
+        for (var i = 0; i < response.length; i++) {
+
+            var infoEl = document.getElementById('monuments-div');
+    
+            infoEl.innerHTML += '<h2>' + response[i].name + '</h2>';
+        }
     })
 }
