@@ -77,11 +77,11 @@ var displayMuseums = function () {
 displayRestaurants = function () {
     var page = Math.floor((Math.random() * 9) + 1)
         console.log(page);
-        
+
     apiCall = 'https://api.documenu.com/v2/restaurants/search/geo?lat='
         + lat
         + '&lon=' + lon +
-        '&distance=5&size=5&page=' + page + '&key=18dceebbe886a72f5ab042ee15df4665';
+        '&distance=5&size=30&page=' + page + '&key=18dceebbe886a72f5ab042ee15df4665';
 
     // turning the api call into json
     fetch(apiCall)
@@ -91,13 +91,21 @@ displayRestaurants = function () {
         .then(function (response) {
             //printing out to the page the names things
             console.log(response);
-            for (var i = 0; i < response.data.length; i++) {
+            // var name = Math.floor(Math.random() * 20);
+            var infoEl = document.getElementById('restaurants-div');
+            infoEl.innerHTML += '<h2>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</h2>';
+            infoEl.innerHTML += '<h2>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</h2>';
+            infoEl.innerHTML += '<h2>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</h2>';
+            infoEl.innerHTML += '<h2>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</h2>';
+            infoEl.innerHTML += '<h2>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</h2>';
 
-                var infoEl = document.getElementById('restaurants-div');
+            // for (var i = 0; i < response.data.length; i++) {
 
-                infoEl.innerHTML += '<h2>' + response.data[i].restaurant_name + '</h2>';
-                console.log(response.data[i].restaurant_name);
-            }
+            //     var infoEl = document.getElementById('restaurants-div');
+
+            //     infoEl.innerHTML += '<h2>' + response.data[i].restaurant_name + '</h2>';
+            //     console.log(response.data[i].restaurant_name);
+            // }
         })
 }
 
