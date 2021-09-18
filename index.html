@@ -1,26 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <title>Document</title>
-</head>
-<body>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <title>Plan My Day</title>
+  </head>
+  <body>
+    <div class="navbar is-black">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item title is-1" href="#" style="font-weight: bold">
+            Random Day
+          </a>
+        </div>
+      </div>
+    </div>
+<br>
+    <div class="hero">
+      <div class="container">
+        <div id="hero-img">
+          <img src="https://via.placeholder.com/768x400">
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="site-info">
+      <div class="container has-text-centered">
+        <p class="subtitle is-2">What is Random Day?</p>
+        <div class="content site-instructions">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed assumenda sunt doloremque, vero incidunt similique fugiat. Tenetur quos commodi omnis aspernatur minima consequatur molestiae dignissimos ipsum! Aperiam repellat eum sapiente. Enim tenetur et deserunt a veniam voluptatum nam! Aperiam, accusantium!
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="search-form has-text-centered">
+      <div class="control container">
+        <input class="input is-small is-rounded is-focused" type="text" id="city" placeholder="Enter your city"/>
+        <br>
+        <br>
+        <button class="button is-rounded is-focused is-outlined" id="userInput">Plan my Day!</button>
+      </div>
+  </div>
 
-<input type='text' id='city'>
-<button id='userInput'>Submit</button>
+    <div id="info"></div>
 
-<div id="info">
-</div>
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src='./assets/js/script.js'></script>
-
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
-
-
