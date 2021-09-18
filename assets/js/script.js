@@ -55,21 +55,30 @@ function getUserInput() {
 
       //Calling the function to display places based on the lat and lon of the city name
       displayPlaces(lat, lon);
+      displayTicketApi();
     });
 }
 
 // Function pull ticketmaster info
-$.ajax({
-  type: "GET",
-  url: "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&size=1&apikey=iHQWV72eUoMRF8CqNt6SxnF49uNdDeK8",
-  async: true,
-  dataType: "json",
-  success: function (json) {
-    console.log(json);
-    // Parse the response.
-    // Do other things.
-  },
-  error: function (xhr, status, err) {
-    // This time, we do not end up here!
-  },
-});
+function displayTicketApi() {
+  $.ajax({
+    type: "GET",
+    url:
+      "https://app.ticketmaster.com/discovery/v2/events.json?size=5&sort=date,asc&countryCode=US&city=" +
+      textEl.value +
+      "&apikey=iHQWV72eUoMRF8CqNt6SxnF49uNdDeK8",
+    async: true,
+    dataType: "json",
+    success: function (json) {
+      console.log(json);
+      showEvents(json);
+    },
+    error: function (xhr, status, err) {},
+  });
+}
+
+function showEvents(json) {
+  for (var i = 0; i < json.page.size; i++) {
+    $("#info").append("<p>" + json._embedded.events[i].name + "</p>");
+  }
+}
