@@ -43,7 +43,8 @@ function getUserInput() {
             displayMuseums(lat, lon);
             displayRestaurants(lat, lon);
             displayMonuments(lat, lon);
-            displayTicketApi();
+            displaySportEvents();
+            displayMusicEvents();
             loadCityHistory();
             textEl.value = "";
         })
@@ -166,36 +167,117 @@ var displayMuseums = function () {
     }
 }
 
-// Function pull ticketmaster info
-function displayTicketApi() {
-    var infoEl = document.getElementById('sports');
+//  New Function pull ticketmaster info
+function displayMusicEvents() {
+    var infoEl = document.getElementById('concerts');
     infoEl.innerHTML = "";
     $.ajax({
         type: "GET",
         url:
-            "https://app.ticketmaster.com/discovery/v2/events.json?size=5&sort=date,asc&countryCode=US&city=" +
+            "https://app.ticketmaster.com/discovery/v2/events.json?segmentId=KZFzniwnSyZfZ7v7nJ&size=6&sort=date,asc&countryCode=US&city=" +
             textEl.value +
             "&apikey=iHQWV72eUoMRF8CqNt6SxnF49uNdDeK8",
         async: true,
         dataType: "json",
         success: function (json) {
             console.log(json);
-            showEvents(json);
+            showMusicEvents(json);
         },
         error: function (xhr, status, err) { },
     });
 }
 
-function showEvents(json) {
+function displaySportEvents() {
+    var infoEl = document.getElementById('sports');
+    infoEl.innerHTML = "";
+    $.ajax({
+        type: "GET",
+        url:
+            "https://app.ticketmaster.com/discovery/v2/events.json?segmentId=KZFzniwnSyZfZ7v7nE&size=5&sort=date,asc&countryCode=US&city=" +
+            textEl.value +
+            "&apikey=iHQWV72eUoMRF8CqNt6SxnF49uNdDeK8",
+        async: true,
+        dataType: "json",
+        success: function (json) {
+            console.log(json);
+            showSportEvents(json);
+        },
+        error: function (xhr, status, err) { },
+    });
+}
 
-    for (var i = 0; i < json.page.size; i++) {
+function showMusicEvents(json) {
+    for (var i = 1; i < json.page.size; i++) {
         var d = json._embedded.events[i].dates.start.dateTime;
         var date = new Date(d);
-        var name = json._embedded.events[i].name;
-        console.log(name)
-
-        $("#sports").append("<p>" + json._embedded.events[i].name + ":<br>" + date.toDateString() + "</p>");
+        $("#concerts").append(
+            '<img src="' +
+            json._embedded.events[i].images[0].url +
+            '" />' +
+            "<p>" +
+            '<a href="' +
+            json._embedded.events[i].url +
+            '" target="_blank">' +
+            json._embedded.events[i].name +
+            "</a>" +
+            "<br> " +
+            date.toDateString() +
+            "</p>"
+            
+        );
     }
 }
+function showSportEvents(json) {
+    for (var i = 0; i < json.page.size; i++) {
+        // var date = new Date(d);
+        $("#sports").append(
+            '<img src="' +
+            json._embedded.events[i].images[0].url +
+            '" />' +
+            "<p>" +
+            '<a href="' +
+            json._embedded.events[i].url +
+            '" target="_blank">' +
+            json._embedded.events[i].name +
+            "</a>" +
+            "<br>" +
+            json._embedded.events[i].dates.start.localDate +
+            "</p>"
+            
+        );
+    }
+}
+
+// Old Function pull ticketmaster info
+// function displayTicketApi() {
+    var infoEl = document.getElementById('sports');
+    infoEl.innerHTML = "";
+//     $.ajax({
+//         type: "GET",
+//         url:
+//             "https://app.ticketmaster.com/discovery/v2/events.json?size=5&sort=date,asc&countryCode=US&city=" +
+//             textEl.value +
+//             "&apikey=iHQWV72eUoMRF8CqNt6SxnF49uNdDeK8",
+//         async: true,
+//         dataType: "json",
+//         success: function (json) {
+//             console.log(json);
+//             showEvents(json);
+//         },
+//         error: function (xhr, status, err) { },
+//     });
+// }
+
+// function showEvents(json) {
+
+//     for (var i = 0; i < json.page.size; i++) {
+//         var d = json._embedded.events[i].dates.start.dateTime;
+//         var date = new Date(d);
+//         var name = json._embedded.events[i].name;
+//         console.log(name)
+
+//         $("#sports").append("<p>" + json._embedded.events[i].name + ":<br>" + date.toDateString() + "</p>");
+//     }
+// }
 
 loadCityHistory();
