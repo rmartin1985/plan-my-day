@@ -1,124 +1,120 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
     <title>Plan My Day</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
+        <div class="navbar-brand">
             <a class="navbar-item is-white title is-1" href="#" style="font-weight: bold">
-              <p class="nav-item has-text-centered">Random Day</p>
+                <p class="nav-item has-text-centered">Random Day</p>
             </a>
-          </div>
+        </div>
 
-           <div class="navbar-menu is-active">
-              <div class="navbar-end">
-                <div class="navbar-item">
-                  <div class="buttons">
-                    <a class="button is-small is-dark is-hoverable">
-                      Past Searches
+        <div class="navbar-menu is-active">
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" id="city-menu">
+                        Past Searches
                     </a>
-                  </div>
-                </div>  
-              </div>
+
+                    <div class="navbar-dropdown" id="past-cities">
+                       
+                    </div>
+                </div>
             </div>
+        </div>
     </nav>
     <br />
 
     <div class="hero">
-      <div class="container">
-        <div id="hero-img">
-          <img src="https://via.placeholder.com/768x400" />
+        <div class="container">
+            <div id="hero-img">
+                <img src="https://via.placeholder.com/768x400" />
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    </div>
 
     <br />
 
     <div id="site-info">
-      <div class="container has-text-centered">
-        <p class="subtitle is-3">What is Random Day?</p>
-        <div class="content site-instructions">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-            assumenda sunt doloremque, vero incidunt similique fugiat. Tenetur
-            quos commodi omnis aspernatur minima consequatur molestiae
-            dignissimos ipsum! Aperiam repellat eum sapiente. Enim tenetur et
-            deserunt a veniam voluptatum nam! Aperiam, accusantium!
-          </p>
+        <div class="container has-text-centered">
+            <p class="subtitle is-3">What is Random Day?</p>
+            <div class="content site-instructions">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                    assumenda sunt doloremque, vero incidunt similique fugiat. Tenetur
+                    quos commodi omnis aspernatur minima consequatur molestiae
+                    dignissimos ipsum! Aperiam repellat eum sapiente. Enim tenetur et
+                    deserunt a veniam voluptatum nam! Aperiam, accusantium!
+                </p>
+            </div>
         </div>
-      </div>
     </div>
 
     <br />
 
     <div class="search-form has-text-centered">
-      <div class="control container">
-        <input
-          class="input is-rounded has-text-centered"
-          type="text"
-          style="width: 33%"
-          id="city"
-          placeholder="Enter your city"
-        />
-        <br />
-        <br />
-        <button class="button is-rounded is-outlined" id="userInput">
-          Plan my Day!
-        </button>
-      </div>
+        <div class="control container">
+            <input class="input is-rounded has-text-centered" type="text" style="width: 33%" id="city"
+                placeholder="Enter your city" />
+            <br />
+            <br />
+            <button class="button is-rounded is-outlined" id="userInput">
+                Plan my Day!
+            </button>
+        </div>
     </div>
 
     <br />
 
     <div id="info">
-      <div class="container">
-        <div class="columns is-desktop">
-          <div class="column museums">
-            <h4 class="title is-4 has-text-centered">Museums</h4>
-            <ul class="has-text-centered museums" id="museums">
-              
-            </ul>
-          </div>
-          <div class="column monuments">
-            <h4 class="title is-4 has-text-centered">Monuments</h4>
-            <ul class="has-text-centered monuments" id="monuments">
-              
-            </ul>
-          </div>
-          <div class="column bars">
-            <h4 class="title is-4 has-text-centered">Restaurants</h4>
-            <ul class="has-text-centered bars" id="restaurants">
-              
-            </ul>
-          </div>
-          <div class="column sports">
-            <h4 class="title is-4 has-text-centered">Sporting Events</h4>
-            <ul class="has-text-centered sports" id="sports">
-              
-            </ul>
-          </div>
-          <div class="column concerts">
-            <h4 class="title is-4 has-text-centered">Live-Music</h4>
-            <ul class="has-text-centered concerts" id="concerts">
-              
-            </ul>
-          </div>
+        <div class="container">
+            <div class="columns is-desktop">
+                <div class="column museums">
+                    <h4 class="title is-4 has-text-centered">Museums</h4>
+                    <ul class="has-text-centered museums" id="museums">
+
+                    </ul>
+                </div>
+                <div class="column monuments">
+                    <h4 class="title is-4 has-text-centered">Monuments</h4>
+                    <ul class="has-text-centered monuments" id="monuments">
+
+                    </ul>
+                </div>
+                <div class="column bars">
+                    <h4 class="title is-4 has-text-centered">Restaurants</h4>
+                    <ul class="has-text-centered bars" id="restaurants">
+
+                    </ul>
+                </div>
+                <div class="column sports">
+                    <h4 class="title is-4 has-text-centered">Sporting Events</h4>
+                    <ul class="has-text-centered sports" id="sports">
+
+                    </ul>
+                </div>
+                <div class="column concerts">
+                    <h4 class="title is-4 has-text-centered">Live-Music</h4>
+                    <ul class="has-text-centered concerts" id="concerts">
+
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
-  </body>
+</body>
+
 </html>

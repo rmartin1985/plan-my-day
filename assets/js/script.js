@@ -10,6 +10,8 @@ var barsEl = document.getElementById('bars');
 var monumentsEl = document.getElementById('monuments');
 
 var cityHistory = JSON.parse(localStorage.getItem("search")) || [];
+var pastEl = document.querySelector("#city-menu");
+var citiesEl = document.querySelector("#past-cities");
 
 
 
@@ -46,21 +48,19 @@ function getUserInput() {
         })
 }
 
-// var displayPlaces = function(lat, lon) {
+var loadCityHistory = function () {
+    citiesEl.innerHTML = "";
+    for (let i = 0; i < cityHistory.length; i++) {
+        var historyItem = document.createElement("a");
+        // <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
+        historyItem.setAttribute("class", "navbar-item");
+        historyItem.innerText = cityHistory[i];
+        citiesEl.append(historyItem);
+    }
+}
 
-//     if (museumsEl.checked === true) {
-//         displayMuseums();
-//     }
-//     if (restaurantsEl.checked === true) {
-//         displayRestaurants();
-//     } 
-//     if (barsEl.checked === true) {
-//         displayBars();
-//     }
-//     if (monumentsEl.checked === true) {
-//         displayMonuments();
-//     }
-// }
+// got rid of displayPlaces as we don't have the check boxes anymore
+
 
 var displayMuseums = function () {
     var infoEl = document.getElementById('museums');
@@ -129,37 +129,7 @@ var displayMuseums = function () {
             })
     }
 
-    // displayBars = function() {
-    //     apiCall = 'https://api.opentripmap.com/0.1/en/places/radius?radius=40233&lon=' 
-    //     + lon 
-    //     + '&lat=' + lat + 
-    //     '&kinds=bars&rate=3&format=json&limit=10&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b';
-
-    //     // turning the api call into json
-    //     fetch(apiCall)
-    //     .then(function(response){
-    //         return response.json();
-    //     })
-    //     .then(function(response){
-    //         //printing out to the page the names things
-    //         console.log(response);
-    //         for (var i = 0; i < response.length; i++) {
-
-    //             // Skipping anything with a rating of 7
-    //             if (response[i].rate === 7) {
-
-    //             console.log('a 7 was skipped');
-
-    //             } else {
-    //             // Selecting the bars div
-    //             var infoEl = document.getElementById('bars-div');
-
-    //             // Adding an <h2> tag to the div 
-    //             infoEl.innerHTML += '<h2>' + response[i].name + '</h2>';
-    //             }
-    //         }
-    //     })
-    // }
+ // got rid of the displayBars function as that was filtering correctly and don't think we need it now. 
 
     displayMonuments = function () {
         var infoEl = document.getElementById('monuments');
@@ -220,7 +190,9 @@ function showEvents(json) {
         var d = json._embedded.events[i].dates.start.dateTime;
         var date = new Date(d);
         // console.log(date.toDateString());
-        $("#sports").append("<p>" + json._embedded.events[i].name + ": " + date.toDateString() + "</p>");
+        $("#sports").append("<p>" + json._embedded.events[i].name + ":<br>" + date.toDateString() + "</p>");
 
     }
 }
+
+loadCityHistory();
