@@ -64,7 +64,7 @@ function displayTicketApi() {
   $.ajax({
     type: "GET",
     url:
-      "https://app.ticketmaster.com/discovery/v2/events.json?size=5&sort=date,asc&countryCode=US&city=" +
+      "https://app.ticketmaster.com/discovery/v2/events.json?size=6&sort=date,asc&countryCode=US&city=" +
       textEl.value +
       "&apikey=iHQWV72eUoMRF8CqNt6SxnF49uNdDeK8",
     async: true,
@@ -78,7 +78,7 @@ function displayTicketApi() {
 }
 
 function showEvents(json) {
-  for (var i = 0; i < json.page.size; i++) {
+  for (var i = 1; i < json.page.size; i++) {
     $("#info").append(
       "<p>" +
         '<a href="' +
@@ -86,6 +86,11 @@ function showEvents(json) {
         '" target="_blank">' +
         json._embedded.events[i].name +
         "</a>" +
+        " " +
+        json._embedded.events[i].dates.start.localDate +
+        '<img src="' +
+        json._embedded.events[i].images[0].url +
+        '" />' +
         "</p>"
     );
   }
