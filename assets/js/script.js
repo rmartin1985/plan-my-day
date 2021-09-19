@@ -79,6 +79,14 @@ function displayTicketApi() {
 
 function showEvents(json) {
   for (var i = 0; i < json.page.size; i++) {
-    $("#info").append("<p>" + json._embedded.events[i].name + "</p>");
+    $("#info").append(
+      "<p>" +
+        '<a href="' +
+        json._embedded.events[i].url +
+        '" target="_blank">' +
+        json._embedded.events[i].name +
+        "</a>" +
+        "</p>"
+    );
   }
 }
