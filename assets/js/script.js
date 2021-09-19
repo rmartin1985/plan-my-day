@@ -55,31 +55,49 @@ function getUserInput() {
 
       //Calling the function to display places based on the lat and lon of the city name
       displayPlaces(lat, lon);
-      displayTicketApi();
+      displayMusicEvents();
+      displaySportEvents();
     });
 }
 
 // Function pull ticketmaster info
-function displayTicketApi() {
+function displayMusicEvents() {
   $.ajax({
     type: "GET",
     url:
-      "https://app.ticketmaster.com/discovery/v2/events.json?size=6&sort=date,asc&countryCode=US&city=" +
+      "https://app.ticketmaster.com/discovery/v2/events.json?segmentId=KZFzniwnSyZfZ7v7nJ&size=6&sort=date,asc&countryCode=US&city=" +
       textEl.value +
       "&apikey=iHQWV72eUoMRF8CqNt6SxnF49uNdDeK8",
     async: true,
     dataType: "json",
     success: function (json) {
       console.log(json);
-      showEvents(json);
+      showMusicEvents(json);
     },
     error: function (xhr, status, err) {},
   });
 }
 
-function showEvents(json) {
+function displaySportEvents() {
+  $.ajax({
+    type: "GET",
+    url:
+      "https://app.ticketmaster.com/discovery/v2/events.json?segmentId=KZFzniwnSyZfZ7v7nE&size=6&sort=date,asc&countryCode=US&city=" +
+      textEl.value +
+      "&apikey=iHQWV72eUoMRF8CqNt6SxnF49uNdDeK8",
+    async: true,
+    dataType: "json",
+    success: function (json) {
+      console.log(json);
+      showSportEvents(json);
+    },
+    error: function (xhr, status, err) {},
+  });
+}
+
+function showMusicEvents(json) {
   for (var i = 1; i < json.page.size; i++) {
-    $("#info").append(
+    $("#concerts").append(
       "<p>" +
         '<a href="' +
         json._embedded.events[i].url +
@@ -88,10 +106,28 @@ function showEvents(json) {
         "</a>" +
         " " +
         json._embedded.events[i].dates.start.localDate +
+        "</p>" +
         '<img src="' +
         json._embedded.events[i].images[0].url +
-        '" />' +
-        "</p>"
+        '" />'
+    );
+  }
+}
+function showSportEvents(json) {
+  for (var i = 1; i < json.page.size; i++) {
+    $("#sports").append(
+      "<p>" +
+        '<a href="' +
+        json._embedded.events[i].url +
+        '" target="_blank">' +
+        json._embedded.events[i].name +
+        "</a>" +
+        " " +
+        json._embedded.events[i].dates.start.localDate +
+        "</p>" +
+        '<img src="' +
+        json._embedded.events[i].images[0].url +
+        '" />'
     );
   }
 }
