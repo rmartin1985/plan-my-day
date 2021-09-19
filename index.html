@@ -23,50 +23,110 @@
   </head>
 
   <body>
-    <div class="navbar is-black">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item title is-1" href="#" style="font-weight: bold">
-            Random Day
-          </a>
-        </div>
-      </div>
-    </div>
+    <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item is-white title is-1" href="#" style="font-weight: bold">
+              <p class="nav-item has-text-centered">Random Day</p>
+            </a>
+          </div>
 
-<br>
+           <div class="navbar-menu is-active">
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a class="button is-small is-dark is-hoverable">
+                      Past Searches
+                    </a>
+                  </div>
+                </div>  
+              </div>
+            </div>
+    </nav>
+    <br />
 
     <div class="hero">
       <div class="container">
         <div id="hero-img">
-          <img src="https://via.placeholder.com/768x400">
+          <img src="https://via.placeholder.com/768x400" />
         </div>
       </div>
     </div>
+  </div>
 
-    <br>
+    <br />
 
     <div id="site-info">
       <div class="container has-text-centered">
-        <p class="subtitle is-2">What is Random Day?</p>
+        <p class="subtitle is-3">What is Random Day?</p>
         <div class="content site-instructions">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed assumenda sunt doloremque, vero incidunt similique fugiat. Tenetur quos commodi omnis aspernatur minima consequatur molestiae dignissimos ipsum! Aperiam repellat eum sapiente. Enim tenetur et deserunt a veniam voluptatum nam! Aperiam, accusantium!
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            assumenda sunt doloremque, vero incidunt similique fugiat. Tenetur
+            quos commodi omnis aspernatur minima consequatur molestiae
+            dignissimos ipsum! Aperiam repellat eum sapiente. Enim tenetur et
+            deserunt a veniam voluptatum nam! Aperiam, accusantium!
           </p>
         </div>
       </div>
     </div>
 
-    <br>
+    <br />
 
     <div class="search-form has-text-centered">
       <div class="control container">
-        <input class="input is-small is-rounded is-focused" type="text" id="city" placeholder="Enter your city"/>
-        <br>
-        <br>
-        <button class="button is-rounded is-focused is-outlined" id="userInput">Plan my Day!</button>
+        <input
+          class="input is-rounded has-text-centered"
+          type="text"
+          style="width: 33%"
+          id="city"
+          placeholder="Enter your city"
+        />
+        <br />
+        <br />
+        <button class="button is-rounded is-outlined" id="userInput">
+          Plan my Day!
+        </button>
       </div>
-   </div>
+    </div>
 
-    <div id="info"></div>
+    <br />
+
+    <div id="info">
+      <div class="container">
+        <div class="columns is-desktop">
+          <div class="column museums">
+            <h4 class="title is-4 has-text-centered">Museums</h4>
+            <ul class="has-text-centered museums">
+              
+            </ul>
+          </div>
+          <div class="column monuments">
+            <h4 class="title is-4 has-text-centered">Monuments</h4>
+            <ul class="has-text-centered monuments">
+              
+            </ul>
+          </div>
+          <div class="column bars">
+            <h4 class="title is-4 has-text-centered">Bars</h4>
+            <ul class="has-text-centered bars">
+              
+            </ul>
+          </div>
+          <div class="column sports">
+            <h4 class="title is-4 has-text-centered">Sporting Events</h4>
+            <ul class="has-text-centered sports">
+              
+            </ul>
+          </div>
+          <div class="column concerts">
+            <h4 class="title is-4 has-text-centered">Live-Music</h4>
+            <ul class="has-text-centered concerts">
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
