@@ -44,6 +44,7 @@ function getUserInput() {
             displayRestaurants(lat, lon);
             displayMonuments(lat, lon);
             displayTicketApi();
+            loadCityHistory();
             textEl.value = "";
         })
 }
@@ -129,7 +130,7 @@ var displayMuseums = function () {
             })
     }
 
- // got rid of the displayBars function as that was filtering correctly and don't think we need it now. 
+    // got rid of the displayBars function as that was filtering correctly and don't think we need it now. 
 
     displayMonuments = function () {
         var infoEl = document.getElementById('monuments');
@@ -186,12 +187,14 @@ function displayTicketApi() {
 }
 
 function showEvents(json) {
+
     for (var i = 0; i < json.page.size; i++) {
         var d = json._embedded.events[i].dates.start.dateTime;
         var date = new Date(d);
-        // console.log(date.toDateString());
-        $("#sports").append("<p>" + json._embedded.events[i].name + ":<br>" + date.toDateString() + "</p>");
+        var name = json._embedded.events[i].name;
+        console.log(name)
 
+        $("#sports").append("<p>" + json._embedded.events[i].name + ":<br>" + date.toDateString() + "</p>");
     }
 }
 
