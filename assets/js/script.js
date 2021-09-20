@@ -117,6 +117,40 @@ var displayMuseums = function () {
             }
         })
 }
+
+// This is the open menu API if we would like to use this one instead. 
+
+// displayRestaurants = function () {
+//     restaurantsInfoEl.removeAttribute("class");
+//     restaurantsInfoEl.setAttribute("class", "column restaurants");
+//     var infoEl = document.getElementById('restaurants');
+//     infoEl.innerHTML = "";
+//     var page = Math.floor((Math.random() * 9) + 1)
+//         console.log(page);
+
+//     apiCall = 'https://api.documenu.com/v2/restaurants/search/geo?lat='
+//         + lat
+//         + '&lon=' + lon +
+//         '&distance=5&size=30&page=' + page + '&key=18dceebbe886a72f5ab042ee15df4665';
+
+//     // turning the api call into json
+//     fetch(apiCall)
+//         .then(function (response) {
+//             return response.json();
+//         })
+//         .then(function (response) {
+//             //printing out to the page the names things
+//             console.log(response);
+//             // var name = Math.floor(Math.random() * 20);
+//             infoEl.innerHTML += '<li>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</li>';
+//             infoEl.innerHTML += '<li>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</li>';
+//             infoEl.innerHTML += '<li>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</li>';
+//             infoEl.innerHTML += '<li>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</li>';
+//             infoEl.innerHTML += '<li>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</li>';
+//         })
+// }
+
+// This is the first restaurant fetch call. Still works but doesn't display as many in each city. 
 displayRestaurants = function () {
     restaurantsInfoEl.removeAttribute("class");
     restaurantsInfoEl.setAttribute("class", "column restaurants");
@@ -143,11 +177,8 @@ displayRestaurants = function () {
                     console.log('a 7 was skipped');
 
                 } else {
-
                     // Selecting the restaurants div
-                    // var infoEl = document.getElementById('restaurants');
-
-                    // adding a <h2> with the name 
+                   
                     infoEl.innerHTML += '<li>' + response[i].name + '</li>';
                 }
             }
