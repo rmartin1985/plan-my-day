@@ -279,7 +279,7 @@ function showMusicEvents(json) {
 }
 function showSportEvents(json) {
   for (var i = 0; i < json.page.size; i++) {
-    // converted time format using moment.js for a standard time format
+    // converted time format using moment.js for a standard
     var d = json._embedded.events[i].dates.start.dateTime;
     var date = moment(d);
     var dateFormat = date.format("ddd MMM DD YYYY");
