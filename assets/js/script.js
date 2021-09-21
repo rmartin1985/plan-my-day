@@ -205,14 +205,17 @@ displayMonuments = function () {
         .then(function (response) {
             //printing out to the page the names things
             console.log(response);
+            console.log(response.length);
+            if (response.length === 0) {
+                infoEl.innerHTML += '<li>Unable to find any monuments</li>'
+            }
+
             for (var i = 0; i < response.length; i++) {
 
                 // Skipping anything with a rating of 7
                 if (response[i].rate === 7) {
-
                     console.log('a 7 was skipped');
-                }
-                else {
+                } else {
                     // Selecting the monuments div
                     // var infoEl = document.getElementById('monuments');
                     // adding a <h2> tag to the div and adding the name 
