@@ -106,7 +106,14 @@ var displayMuseums = function () {
           // Selecting the mmuseums div
           // var infoEl = document.getElementById('museums');
           // adding to the div an <h2> tag with the name of the place
-          infoEl.innerHTML += "<li>" + response[i].name + "</li>";
+          infoEl.innerHTML +=
+            "<li>" +
+            '<a href="https://www.google.com/search?q=' +
+            response[i].name +
+            '"target="_blank">' +
+            response[i].name +
+            "</a>" +
+            "</li>";
         }
       }
     });
@@ -172,7 +179,13 @@ displayRestaurants = function () {
         } else {
           // Selecting the restaurants div
 
-          infoEl.innerHTML += "<li>" + response[i].name + "</li>";
+          infoEl.innerHTML +=
+            "<li>" +
+            '<a href="https://www.google.com/search?q=' +
+            response[i].name +
+            '"target="_blank">' +
+            response[i].name +
+            "</li>";
         }
       }
     });
@@ -213,7 +226,13 @@ displayMonuments = function () {
           // Selecting the monuments div
           // var infoEl = document.getElementById('monuments');
           // adding a <h2> tag to the div and adding the name
-          infoEl.innerHTML += "<li>" + response[i].name + "</li>";
+          infoEl.innerHTML +=
+            "<li>" +
+            '<a href="https://www.google.com/search?q=' +
+            response[i].name +
+            '"target="_blank">' +
+            response[i].name +
+            "</li>";
         }
       }
     });
