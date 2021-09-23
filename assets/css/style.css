@@ -13,6 +13,10 @@
 
   }
 
+  #hero-img img{
+    border-radius: 25px;
+  }
+
   .title {
     text-align: center;
   }
