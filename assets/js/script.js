@@ -241,7 +241,7 @@ displayMonuments = function () {
 //  New Function pull ticketmaster info
 function displayMusicEvents() {
   concertsInfoEl.removeAttribute("class");
-  concertsInfoEl.setAttribute("class", "column concerts");
+  concertsInfoEl.setAttribute("class", "column");
   var infoEl = document.getElementById("concerts");
   infoEl.innerHTML = "";
   $.ajax({
@@ -262,7 +262,7 @@ function displayMusicEvents() {
 
 function displaySportEvents() {
   sportsInfoEl.removeAttribute("class");
-  sportsInfoEl.setAttribute("class", "column sports");
+  sportsInfoEl.setAttribute("class", "column");
   var infoEl = document.getElementById("sports");
   infoEl.innerHTML = "";
   $.ajax({
@@ -289,7 +289,7 @@ function showMusicEvents(json) {
       '<img src="' +
         json._embedded.events[i].images[0].url +
         '" />' +
-        "<p>" +
+        "<li>" +
         '<a href="' +
         json._embedded.events[i].url +
         '" target="_blank">' +
@@ -297,7 +297,7 @@ function showMusicEvents(json) {
         "</a>" +
         "<br> " +
         date.toDateString() +
-        "</p>"
+        "</li>"
     );
   }
 }
@@ -312,7 +312,7 @@ function showSportEvents(json) {
       '<img src="' +
         json._embedded.events[i].images[0].url +
         '" />' +
-        "<p>" +
+        "<li>" +
         '<a href="' +
         json._embedded.events[i].url +
         '" target="_blank">' +
@@ -320,7 +320,7 @@ function showSportEvents(json) {
         "</a>" +
         "<br>" +
         dateFormat +
-        "</p>"
+        "</li>"
     );
   }
 }

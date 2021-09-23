@@ -1,7 +1,30 @@
-img {
+#all-restaurants img, #all-monuments img, #all-museums img, #all-sports img, #all-concerts img {
     border-radius: 25px;
-    padding: 10px;
     margin: 20px;
-    height: 200px;
-    width: 200px;
+    height: 225px;
+    width: 100%;
+  }
+
+  p {
+    display: inline-block;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  #sports li, #concerts li {
+    text-align: center;
+  }
+
+  .navbar{
+    background-color: #5271ff;
   }

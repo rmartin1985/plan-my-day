@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item is-white title is-1" href="#" style="font-weight: bold">
                 <p class="nav-item has-text-centered">Random Day</p>
@@ -39,7 +39,7 @@
     <div class="hero">
         <div class="container">
             <div id="hero-img">
-                <img src="https://via.placeholder.com/768x400" />
+                <img src="./assets/Hero Plan my day.gif" />
             </div>
         </div>
     </div>
@@ -52,7 +52,11 @@
             <p class="subtitle is-3">What is Random Day?</p>
             <div class="content site-instructions">
                 <p>
-                    Have you ever found yourself sitting at home on your day off from your responsibilites and wanted to go out and do something but you forgot to make plans?<br> Or maybe you're in a new city and you have a few hours to discover something new? <br>Plan My Day is here to help! Just type in the name of the city you wish to search in and you'll be given a list of events or places to visit that you otherwise may have not thought to look up. So hurry up and go out and enjoy your day!
+                    Have you ever found yourself sitting at home on your day off from your responsibilites and wanted to
+                    go out and do something but you forgot to make plans?<br> Or maybe you're in a new city and you have
+                    a few hours to discover something new? <br>Plan My Day is here to help! Just type in the name of the
+                    city you wish to search in and you'll be given a list of events or places to visit that you
+                    otherwise may have not thought to look up. So hurry up and go out and enjoy your day!
                 </p>
             </div>
         </div>
@@ -76,39 +80,57 @@
 
     <div id="info">
         <div class="container">
-            <div class="columns" >
-                <div class="column museums is-hidden" id="all-museums">
-                    <h4 class="title is-4 has-text-centered">Museums</h4>
-                    <ul class="has-text-centered museums" id="museums">
+            <div class="columns">
+                <div class="column is-one-third is-hidden" id="all-museums">
+                    <h4 class="title">Museums</h4>
+                    <div class="column" id="museums">
 
-                    </ul>
+                    </div>
                 </div>
-                <div class="column monuments is-hidden" id="all-monuments">
-                    <h4 class="title is-4 has-text-centered">Monuments</h4>
-                    <ul class="has-text-centered monuments" id="monuments">
+                <div class="column is-one-third is-hidden" id="all-monuments">
+                    <h4 class="title">Monuments</h4>
+                    <div class="column" id="monuments">
 
-                    </ul>
+                    </div>
                 </div>
-                <div class="column restaurants is-hidden" id="all-restaurants">
-                    <h4 class="title is-4 has-text-centered">Popular Restaurants</h4>
-                    <ul class="has-text-centered bars" id="restaurants">
+                <div class="column is-one-third is-hidden" id="all-restaurants">
+                    <h4 class="title">Popular Restaurants</h4>
+                    <div class="column" id="restaurants">
 
-                    </ul>
+                    </div>
                 </div>
-                <div class="column sports is-hidden" id="all-sports">
-                    <h4 class="title is-4 has-text-centered">Upcoming Sporting Events</h4>
-                    <ul class="has-text-centered sports" id="sports">
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-hidden" id="all-sports">
+                    <h4 class="title">Upcoming Sporting Events</h4>
+                    <div class="columns is-centered">
+                        <div class="column" id="sports">
 
-                    </ul>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="column concerts is-hidden" id="all-concerts">
-                    <h4 class="title is-4 has-text-centered">Upcoming Live-Music</h4>
-                    <ul class="has-text-centered concerts" id="concerts">
+                <div class="column" id="filler">
+                    <h4 class="title"></h4>
+                    <div class="columns is-centered">
+                        <div class="column" id="filler">
 
-                    </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="column is-hidden" id="all-concerts">
+                    <h4 class="title">Upcoming Live-Music</h4>
+                    <div class="columns is-centered">
+                        <div class="column" id="concerts">
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
