@@ -203,7 +203,7 @@ displayMonuments = function () {
     lon +
     "&lat=" +
     lat +
-    "&kinds=monuments&rate=3&format=json&limit=10&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b";
+    "&kinds=monuments&rate=3&format=json&limit=20&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b";
 
   // turning the api call into json
   fetch(apiCall)
@@ -215,7 +215,7 @@ displayMonuments = function () {
       console.log(response);
       console.log(response.length);
       if (response.length === 0) {
-        infoEl.innerHTML += "<li>Unable to find any monuments</li>";
+        infoEl.innerHTML += "<li>There are no significant monuments for this city at this time.</li>";
       }
 
       for (var i = 0; i < response.length; i++) {
