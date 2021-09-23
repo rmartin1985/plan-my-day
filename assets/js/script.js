@@ -107,7 +107,6 @@ var displayMuseums = function () {
           // var infoEl = document.getElementById('museums');
           // adding to the div an <h2> tag with the name of the place
           infoEl.innerHTML +=
-          '<img src="./assets/images/Museums.png"/>' +
             "<li>" +
             '<a href="https://www.google.com/search?q=' +
             response[i].name +
@@ -181,7 +180,6 @@ displayRestaurants = function () {
           // Selecting the restaurants div
 
           infoEl.innerHTML +=
-          '<img src="./assets/images/Restaurants.png"/>' +
             "<li>" +
             '<a href="https://www.google.com/search?q=' +
             response[i].name +
@@ -229,7 +227,6 @@ displayMonuments = function () {
           // var infoEl = document.getElementById('monuments');
           // adding a <h2> tag to the div and adding the name
           infoEl.innerHTML +=
-          '<img src="./assets/images/Monuments.png"/>' +
             "<li>" +
             '<a href="https://www.google.com/search?q=' +
             response[i].name +
