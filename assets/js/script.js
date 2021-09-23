@@ -80,7 +80,7 @@ var displayPlaces = function () {
 
 var displayMuseums = function () {
   museumsInfoEl.removeAttribute("class");
-  museumsInfoEl.setAttribute("class", "column museums");
+  museumsInfoEl.setAttribute("class", "row museums");
   var infoEl = document.getElementById("museums");
   infoEl.innerHTML = "";
   apiCall =
@@ -107,13 +107,13 @@ var displayMuseums = function () {
           // var infoEl = document.getElementById('museums');
           // adding to the div an <h2> tag with the name of the place
           infoEl.innerHTML +=
-            "<li>" +
+            "<p>" +
             '<a href="https://www.google.com/search?q=' +
             response[i].name +
             '"target="_blank">' +
             response[i].name +
             "</a>" +
-            "</li>";
+            "</p>";
         }
       }
     });
@@ -154,7 +154,7 @@ var displayMuseums = function () {
 // This is the first restaurant fetch call. Still works but doesn't display as many in each city.
 displayRestaurants = function () {
   restaurantsInfoEl.removeAttribute("class");
-  restaurantsInfoEl.setAttribute("class", "column restaurants");
+  restaurantsInfoEl.setAttribute("class", "row restaurants");
   var infoEl = document.getElementById("restaurants");
   infoEl.innerHTML = "";
   apiCall =
@@ -180,12 +180,12 @@ displayRestaurants = function () {
           // Selecting the restaurants div
 
           infoEl.innerHTML +=
-            "<li>" +
+            "<p>" +
             '<a href="https://www.google.com/search?q=' +
             response[i].name +
             '"target="_blank">' +
             response[i].name +
-            "</li>";
+            "</p>";
         }
       }
     });
@@ -195,7 +195,7 @@ displayRestaurants = function () {
 
 displayMonuments = function () {
   monumentsInfoEl.removeAttribute("class");
-  monumentsInfoEl.setAttribute("class", "column monuments");
+  monumentsInfoEl.setAttribute("class", "row monuments");
   var infoEl = document.getElementById("monuments");
   infoEl.innerHTML = "";
   apiCall =
@@ -215,7 +215,7 @@ displayMonuments = function () {
       console.log(response);
       console.log(response.length);
       if (response.length === 0) {
-        infoEl.innerHTML += "<li>Unable to find any monuments</li>";
+        infoEl.innerHTML += "<p>Unable to find any monuments</p>";
       }
 
       for (var i = 0; i < response.length; i++) {
@@ -227,12 +227,12 @@ displayMonuments = function () {
           // var infoEl = document.getElementById('monuments');
           // adding a <h2> tag to the div and adding the name
           infoEl.innerHTML +=
-            "<li>" +
+            "<p>" +
             '<a href="https://www.google.com/search?q=' +
             response[i].name +
             '"target="_blank">' +
             response[i].name +
-            "</li>";
+            "</p>";
         }
       }
     });
@@ -241,7 +241,7 @@ displayMonuments = function () {
 //  New Function pull ticketmaster info
 function displayMusicEvents() {
   concertsInfoEl.removeAttribute("class");
-  concertsInfoEl.setAttribute("class", "column concerts");
+  concertsInfoEl.setAttribute("class", "row concerts");
   var infoEl = document.getElementById("concerts");
   infoEl.innerHTML = "";
   $.ajax({
@@ -262,7 +262,7 @@ function displayMusicEvents() {
 
 function displaySportEvents() {
   sportsInfoEl.removeAttribute("class");
-  sportsInfoEl.setAttribute("class", "column sports");
+  sportsInfoEl.setAttribute("class", "row sports");
   var infoEl = document.getElementById("sports");
   infoEl.innerHTML = "";
   $.ajax({
