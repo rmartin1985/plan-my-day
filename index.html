@@ -52,7 +52,11 @@
             <p class="subtitle is-3">What is Random Day?</p>
             <div class="content site-instructions">
                 <p>
-                    Have you ever found yourself sitting at home on your day off from your responsibilites and wanted to go out and do something but you forgot to make plans?<br> Or maybe you're in a new city and you have a few hours to discover something new? <br>Plan My Day is here to help! Just type in the name of the city you wish to search in and you'll be given a list of events or places to visit that you otherwise may have not thought to look up. So hurry up and go out and enjoy your day!
+                    Have you ever found yourself sitting at home on your day off from your responsibilites and wanted to
+                    go out and do something but you forgot to make plans?<br> Or maybe you're in a new city and you have
+                    a few hours to discover something new? <br>Plan My Day is here to help! Just type in the name of the
+                    city you wish to search in and you'll be given a list of events or places to visit that you
+                    otherwise may have not thought to look up. So hurry up and go out and enjoy your day!
                 </p>
             </div>
         </div>
@@ -76,39 +80,48 @@
 
     <div id="info">
         <div class="container">
-            <div class="rows" >
-                <div class="row museums is-hidden" id="all-museums">
-                    <h4 class="title is-4">Museums</h4>
+            <div class="columns">
+                <div class="column is-one-third is-hidden" id="all-museums">
+                    <h4 class="title">Museums</h4>
                     <div class="col museums is-inline-block" id="museums">
 
                     </div>
                 </div>
-                <div class="row monuments is-hidden" id="all-monuments">
-                    <h4 class="title is-4">Monuments</h4>
+                <div class="column is-one-third is-hidden" id="all-monuments">
+                    <h4 class="title">Monuments</h4>
                     <div class="col monuments is-inline-block" id="monuments">
 
                     </div>
                 </div>
-                <div class="row restaurants is-hidden" id="all-restaurants">
-                    <h4 class="title is-4">Popular Restaurants</h4>
+                <div class="column is-one-third is-hidden" id="all-restaurants">
+                    <h4 class="title">Popular Restaurants</h4>
                     <div class="col bars" id="restaurants">
 
                     </div>
                 </div>
-                <div class="row sports is-hidden" id="all-sports">
-                    <h4 class="title is-4">Upcoming Sporting Events</h4>
-                    <div class="col sports" id="sports">
+            </div>
+            <div class="columns is-gapless is-multiline is-mobile">
+                <div class="column is-hidden" id="all-sports">
+                    <h4 class="title">Upcoming Sporting Events</h4>
+                    <div class="columns is-centered">
+                        <div class="column is-5" id="sports">
+
+                        </div>
 
                     </div>
                 </div>
-                <div class="row concerts is-hidden" id="all-concerts">
-                    <h4 class="title is-4">Upcoming Live-Music</h4>
-                    <div class="col concerts" id="concerts">
+                <div class="column is-hidden" id="all-concerts">
+                    <h4 class="title">Upcoming Live-Music</h4>
+                    <div class="columns is-centered">
+                        <div class="column is-5" id="concerts">
+
+                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

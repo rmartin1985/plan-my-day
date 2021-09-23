@@ -80,7 +80,7 @@ var displayPlaces = function () {
 
 var displayMuseums = function () {
   museumsInfoEl.removeAttribute("class");
-  museumsInfoEl.setAttribute("class", "row museums");
+  museumsInfoEl.setAttribute("class", "column museums");
   var infoEl = document.getElementById("museums");
   infoEl.innerHTML = "";
   apiCall =
@@ -107,13 +107,13 @@ var displayMuseums = function () {
           // var infoEl = document.getElementById('museums');
           // adding to the div an <h2> tag with the name of the place
           infoEl.innerHTML +=
-            "<p>" +
+            "<li>" +
             '<a href="https://www.google.com/search?q=' +
             response[i].name +
             '"target="_blank">' +
             response[i].name +
             "</a>" +
-            "</p>";
+            "</li>";
         }
       }
     });
@@ -154,7 +154,7 @@ var displayMuseums = function () {
 // This is the first restaurant fetch call. Still works but doesn't display as many in each city.
 displayRestaurants = function () {
   restaurantsInfoEl.removeAttribute("class");
-  restaurantsInfoEl.setAttribute("class", "row restaurants");
+  restaurantsInfoEl.setAttribute("class", "column restaurants");
   var infoEl = document.getElementById("restaurants");
   infoEl.innerHTML = "";
   apiCall =
@@ -180,12 +180,12 @@ displayRestaurants = function () {
           // Selecting the restaurants div
 
           infoEl.innerHTML +=
-            "<p>" +
+            "<li>" +
             '<a href="https://www.google.com/search?q=' +
             response[i].name +
             '"target="_blank">' +
             response[i].name +
-            "</p>";
+            "</li>";
         }
       }
     });
@@ -195,7 +195,7 @@ displayRestaurants = function () {
 
 displayMonuments = function () {
   monumentsInfoEl.removeAttribute("class");
-  monumentsInfoEl.setAttribute("class", "row monuments");
+  monumentsInfoEl.setAttribute("class", "column monuments");
   var infoEl = document.getElementById("monuments");
   infoEl.innerHTML = "";
   apiCall =
@@ -203,7 +203,7 @@ displayMonuments = function () {
     lon +
     "&lat=" +
     lat +
-    "&kinds=monuments&rate=3&format=json&limit=10&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b";
+    "&kinds=monuments&rate=3&format=json&limit=20&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b";
 
   // turning the api call into json
   fetch(apiCall)
@@ -215,7 +215,7 @@ displayMonuments = function () {
       console.log(response);
       console.log(response.length);
       if (response.length === 0) {
-        infoEl.innerHTML += "<p>Unable to find any monuments</p>";
+        infoEl.innerHTML += "<li>There are no significant monuments for this city at this time.</li>";
       }
 
       for (var i = 0; i < response.length; i++) {
@@ -227,12 +227,12 @@ displayMonuments = function () {
           // var infoEl = document.getElementById('monuments');
           // adding a <h2> tag to the div and adding the name
           infoEl.innerHTML +=
-            "<p>" +
+            "<li>" +
             '<a href="https://www.google.com/search?q=' +
             response[i].name +
             '"target="_blank">' +
             response[i].name +
-            "</p>";
+            "</li>";
         }
       }
     });
@@ -241,7 +241,7 @@ displayMonuments = function () {
 //  New Function pull ticketmaster info
 function displayMusicEvents() {
   concertsInfoEl.removeAttribute("class");
-  concertsInfoEl.setAttribute("class", "row concerts");
+  concertsInfoEl.setAttribute("class", "column concerts");
   var infoEl = document.getElementById("concerts");
   infoEl.innerHTML = "";
   $.ajax({
@@ -262,7 +262,7 @@ function displayMusicEvents() {
 
 function displaySportEvents() {
   sportsInfoEl.removeAttribute("class");
-  sportsInfoEl.setAttribute("class", "row sports");
+  sportsInfoEl.setAttribute("class", "column sports");
   var infoEl = document.getElementById("sports");
   infoEl.innerHTML = "";
   $.ajax({
@@ -289,7 +289,7 @@ function showMusicEvents(json) {
       '<img src="' +
         json._embedded.events[i].images[0].url +
         '" />' +
-        "<p>" +
+        "<li>" +
         '<a href="' +
         json._embedded.events[i].url +
         '" target="_blank">' +
@@ -297,7 +297,7 @@ function showMusicEvents(json) {
         "</a>" +
         "<br> " +
         date.toDateString() +
-        "</p>"
+        "</li>"
     );
   }
 }
@@ -312,7 +312,7 @@ function showSportEvents(json) {
       '<img src="' +
         json._embedded.events[i].images[0].url +
         '" />' +
-        "<p>" +
+        "<li>" +
         '<a href="' +
         json._embedded.events[i].url +
         '" target="_blank">' +
@@ -320,7 +320,7 @@ function showSportEvents(json) {
         "</a>" +
         "<br>" +
         dateFormat +
-        "</p>"
+        "</li>"
     );
   }
 }

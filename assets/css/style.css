@@ -14,3 +14,11 @@
     text-align: center;
 
   }
+
+  .title {
+    text-align: center;
+  }
+
+  li {
+    list-style-type: none;
+  }
