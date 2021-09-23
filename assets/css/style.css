@@ -1,10 +1,8 @@
 #all-restaurants img, #all-monuments img, #all-museums img, #all-sports img, #all-concerts img {
     border-radius: 25px;
-    padding: 10px;
     margin: 20px;
-    height: 200px;
-    width: 200px;
-    justify-content: center;
+    height: 225px;
+    width: 100%;
   }
 
   p {
@@ -21,4 +19,8 @@
 
   li {
     list-style-type: none;
+  }
+
+  #sports li, #concerts li {
+    text-align: center;
   }
