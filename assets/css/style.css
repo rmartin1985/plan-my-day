@@ -4,4 +4,26 @@ img {
     margin: 20px;
     height: 200px;
     width: 200px;
+    background-color:hsl(0, 0%, 48%);
+    background:rgb(31, 31, 230)
+  }
+ body{
+     background-color:hsl(142, 52%, 96%) ;
+  }
+
+  p{
+    font-size: larger;
+    color: rgb(31, 31, 230);
+  }
+  div#city-menu.navbar-link{
+    background:rgb(31, 31, 230)
+  }
+  p.subtitle.is-3{
+    font-weight: 600;
+    color: rgb(31, 31, 230);
+  }
+  div.column{
+      font-size: x-large;
+    color:rgb(31, 31, 230)
+    
   }
