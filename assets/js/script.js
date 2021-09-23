@@ -19,6 +19,13 @@ var cityHistory = JSON.parse(localStorage.getItem("search")) || [];
 var pastEl = document.querySelector("#city-menu");
 var citiesEl = document.querySelector("#past-cities");
 var pastCityEl = document.querySelector("#past-cities");
+var inputEl = document.querySelector("#city");
+
+inputEl.addEventListener("keyup", function(e) {
+  if (e.keyCode === 13) {
+      buttonEl.click();
+  }
+});
 
 // Adding an event listenr to the button upon click which will display info based on the user input
 buttonEl.addEventListener("click", getUserInput);
