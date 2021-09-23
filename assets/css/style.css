@@ -24,3 +24,7 @@
   #sports li, #concerts li {
     text-align: center;
   }
+
+  /* #all-museums, #all-monuments, #all-restaurants, #all-sports, #all-concerts {
+    border: 10px solid black;
+  } */

@@ -80,7 +80,7 @@ var displayPlaces = function () {
 
 var displayMuseums = function () {
   museumsInfoEl.removeAttribute("class");
-  museumsInfoEl.setAttribute("class", "column museums");
+  museumsInfoEl.setAttribute("class", "column is-one-third");
   var infoEl = document.getElementById("museums");
   infoEl.innerHTML = "";
   apiCall =
@@ -154,7 +154,7 @@ var displayMuseums = function () {
 // This is the first restaurant fetch call. Still works but doesn't display as many in each city.
 displayRestaurants = function () {
   restaurantsInfoEl.removeAttribute("class");
-  restaurantsInfoEl.setAttribute("class", "column restaurants");
+  restaurantsInfoEl.setAttribute("class", "column is-one-third");
   var infoEl = document.getElementById("restaurants");
   infoEl.innerHTML = "";
   apiCall =
@@ -195,7 +195,7 @@ displayRestaurants = function () {
 
 displayMonuments = function () {
   monumentsInfoEl.removeAttribute("class");
-  monumentsInfoEl.setAttribute("class", "column monuments");
+  monumentsInfoEl.setAttribute("class", "column is-one-third");
   var infoEl = document.getElementById("monuments");
   infoEl.innerHTML = "";
   apiCall =
@@ -241,7 +241,7 @@ displayMonuments = function () {
 //  New Function pull ticketmaster info
 function displayMusicEvents() {
   concertsInfoEl.removeAttribute("class");
-  concertsInfoEl.setAttribute("class", "column");
+  concertsInfoEl.setAttribute("class", "column is-half");
   var infoEl = document.getElementById("concerts");
   infoEl.innerHTML = "";
   $.ajax({
@@ -262,7 +262,7 @@ function displayMusicEvents() {
 
 function displaySportEvents() {
   sportsInfoEl.removeAttribute("class");
-  sportsInfoEl.setAttribute("class", "column");
+  sportsInfoEl.setAttribute("class", "column is-half");
   var infoEl = document.getElementById("sports");
   infoEl.innerHTML = "";
   $.ajax({
@@ -288,7 +288,8 @@ function showMusicEvents(json) {
     $("#concerts").append(
       '<img src="' +
         json._embedded.events[i].images[0].url +
-        '" />' +
+        '" />')
+        $("#concerts").append(
         "<li>" +
         '<a href="' +
         json._embedded.events[i].url +
