@@ -24,3 +24,7 @@
   #sports li, #concerts li {
     text-align: center;
   }
+
+  .navbar{
+    background-color: #5271ff;
+  }
