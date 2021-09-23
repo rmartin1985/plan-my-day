@@ -238,38 +238,6 @@ displayMonuments = function () {
     });
 };
 
-monumentsInfoEl.removeAttribute("class");
-monumentsInfoEl.setAttribute("class", "column monuments");
-var infoEl = document.getElementById("monuments");
-infoEl.innerHTML = "";
-apiCall =
-  "https://api.opentripmap.com/0.1/en/places/radius?radius=40233&lon=" +
-  lon +
-  "&lat=" +
-  lat +
-  "&kinds=monuments&rate=3&format=json&limit=10&apikey=5ae2e3f221c38a28845f05b6d3c5612fbf8d9a0bb1b85e69d409790b";
-
-// turning the api call into json
-fetch(apiCall)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (response) {
-    //printing out to the page the names things
-    console.log(response);
-    for (var i = 0; i < response.length; i++) {
-      // Skipping anything with a rating of 7
-      if (response[i].rate === 7) {
-        console.log("a 7 was skipped");
-      } else {
-        // Selecting the monuments div
-        // var infoEl = document.getElementById('monuments');
-        // adding a <h2> tag to the div and adding the name
-        infoEl.innerHTML += "<li>" + response[i].name + "</li>";
-      }
-    }
-  });
-
 //  New Function pull ticketmaster info
 function displayMusicEvents() {
   concertsInfoEl.removeAttribute("class");
