@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #all-restaurants img, #all-monuments img, #all-museums img, #all-sports img, #all-concerts img {
     border-radius: 25px;
     margin: 20px;
