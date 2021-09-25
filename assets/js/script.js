@@ -3,7 +3,7 @@ var textEl = document.getElementById("city");
 // Selecting the button element
 var buttonEl = document.getElementById("userInput");
 
-// Selecte the checkboxs to check if they are clicked
+// variables to select elements 
 var museumsEl = document.getElementById("museums");
 var museumsInfoEl = document.querySelector("#all-museums");
 var restaurantsEl = document.getElementById("restaurants");
@@ -20,7 +20,7 @@ var pastEl = document.querySelector("#city-menu");
 var citiesEl = document.querySelector("#past-cities");
 var pastCityEl = document.querySelector("#past-cities");
 var inputEl = document.querySelector("#city");
-
+// this allows enter to be pushed as well as clicking the button to search
 inputEl.addEventListener("keyup", function(e) {
   if (e.keyCode === 13) {
       buttonEl.click();
@@ -126,39 +126,7 @@ var displayMuseums = function () {
     });
 };
 
-// This is the open menu API if we would like to use this one instead.
-
-// displayRestaurants = function () {
-//     restaurantsInfoEl.removeAttribute("class");
-//     restaurantsInfoEl.setAttribute("class", "column restaurants");
-//     var infoEl = document.getElementById('restaurants');
-//     infoEl.innerHTML = "";
-//     var page = Math.floor((Math.random() * 9) + 1)
-//         console.log(page);
-
-//     apiCall = 'https://api.documenu.com/v2/restaurants/search/geo?lat='
-//         + lat
-//         + '&lon=' + lon +
-//         '&distance=5&size=30&page=' + page + '&key=18dceebbe886a72f5ab042ee15df4665';
-
-//     // turning the api call into json
-//     fetch(apiCall)
-//         .then(function (response) {
-//             return response.json();
-//         })
-//         .then(function (response) {
-//             //printing out to the page the names things
-//             console.log(response);
-//             // var name = Math.floor(Math.random() * 20);
-//             infoEl.innerHTML += '<li>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</li>';
-//             infoEl.innerHTML += '<li>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</li>';
-//             infoEl.innerHTML += '<li>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</li>';
-//             infoEl.innerHTML += '<li>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</li>';
-//             infoEl.innerHTML += '<li>' + response.data[Math.floor(Math.random() * 20)].restaurant_name + '</li>';
-//         })
-// }
-
-// This is the first restaurant fetch call. Still works but doesn't display as many in each city.
+// Fetch for restaurants.
 displayRestaurants = function () {
   restaurantsInfoEl.removeAttribute("class");
   restaurantsInfoEl.setAttribute("class", "column");
@@ -198,7 +166,7 @@ displayRestaurants = function () {
     });
 };
 
-// got rid of the displayBars function as that wasn't filtering correctly and don't think we need it now.
+// fetch for monuments
 
 displayMonuments = function () {
   monumentsInfoEl.removeAttribute("class");
@@ -331,37 +299,5 @@ function showSportEvents(json) {
     );
   }
 }
-
-// Old Function pull ticketmaster info
-// function displayTicketApi() {
-// var infoEl = document.getElementById('sports');
-// infoEl.innerHTML = "";
-//     $.ajax({
-//         type: "GET",
-//         url:
-//             "https://app.ticketmaster.com/discovery/v2/events.json?size=5&sort=date,asc&countryCode=US&city=" +
-//             textEl.value +
-//             "&apikey=iHQWV72eUoMRF8CqNt6SxnF49uNdDeK8",
-//         async: true,
-//         dataType: "json",
-//         success: function (json) {
-//             console.log(json);
-//             showEvents(json);
-//         },
-//         error: function (xhr, status, err) { },
-//     });
-// }
-
-// function showEvents(json) {
-
-//     for (var i = 0; i < json.page.size; i++) {
-//         var d = json._embedded.events[i].dates.start.dateTime;
-//         var date = new Date(d);
-//         var name = json._embedded.events[i].name;
-//         console.log(name)
-
-//         $("#sports").append("<p>" + json._embedded.events[i].name + ":<br>" + date.toDateString() + "</p>");
-//     }
-// }
-
+// main function to load the page
 loadCityHistory();
