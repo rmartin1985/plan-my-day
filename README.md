@@ -72,7 +72,7 @@ Project Link: (https://rmartin1985.github.io/plan-my-day/)
 
 ## Acknowledgements 
 
-* Used Bluma for styling purposes (https://bulma.io/)
+* Used Bulma for styling purposes (https://bulma.io/)
 * Used Opentripmap for the museum, moonument, and restaurant data (https://opentripmap.io/docs)
 * Used Ticketmaster API for the concerts and sporting events data (https://developer.ticketmaster.com/)
 * Used Moment.js to help with some date formating (https://momentjs.com/)
