@@ -61,11 +61,11 @@ With unlimited time and resources we would like to upgrade and add a few more fe
 
 ## Git Hub links for all contributors 
 
-Richard Martin - (https://github.com/rmartin1985)
-Suzzette Boston - (https://github.com/kboston91)
-Rayce Wheat - (https://github.com/RayceWheat)
-James Branch - (https://github.com/Jwbranch4)
-Anna Cruz - (https://github.com/Amc0928)
+* Richard Martin - (https://github.com/rmartin1985)
+* Suzzette Boston - (https://github.com/kboston91)
+* Rayce Wheat - (https://github.com/RayceWheat)
+* James Branch - (https://github.com/Jwbranch4)
+* Anna Cruz - (https://github.com/Amc0928)
 
 
 Project Link: (https://rmartin1985.github.io/plan-my-day/)
