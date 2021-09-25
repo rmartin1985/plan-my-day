@@ -161,7 +161,7 @@ var displayMuseums = function () {
 // This is the first restaurant fetch call. Still works but doesn't display as many in each city.
 displayRestaurants = function () {
   restaurantsInfoEl.removeAttribute("class");
-  restaurantsInfoEl.setAttribute("class", "column restaurants");
+  restaurantsInfoEl.setAttribute("class", "column");
   var infoEl = document.getElementById("restaurants");
   infoEl.innerHTML = "";
   apiCall =
@@ -202,7 +202,7 @@ displayRestaurants = function () {
 
 displayMonuments = function () {
   monumentsInfoEl.removeAttribute("class");
-  monumentsInfoEl.setAttribute("class", "column monuments");
+  monumentsInfoEl.setAttribute("class", "column");
   var infoEl = document.getElementById("monuments");
   infoEl.innerHTML = "";
   apiCall =
