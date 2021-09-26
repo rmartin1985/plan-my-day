@@ -1,12 +1,12 @@
 # Plan My Day
 
-How often have you been sitting at home on a day off and wishing you had made some plans. You know you want to go out and do something, but you don't even know where to start looking? 
+How often have you been sitting at home on a day off and wishing you had made some plans? You know you want to go out and do something, but you don't even know where to start looking? 
 
-Or maybe you found yourself on a business trip or a to see family in a city you are not too familiar with. You have some extra time to explore but don't know which places or things to do that would interest you? 
+Or maybe you found yourself on a business trip or a to see family in a city you are not too familiar with. You have some extra time to explore but don't know which places or things to do that would interest you.
 
 This is where Plan My Day can help! 
 
-We have created an application that will help get you out of your normal routine and get you out to explore something new. 
+We have created an application that will help get you out of your normal routine and out to explore something new. 
 
 All you need to do is enter the name of the city you wish to search in and our app will give suggestions for popular museums, monuments, and restaurants along with some upcoming sporting events or concerts in the area. 
 
@@ -24,19 +24,32 @@ AS A user
 I WANT to be given options for events and activities in a specific city
 SO THAT I can plan my my day and potentially experience something new
 
-GIVEN a landing page with a description of the app
-WHEN I first load the page
-THEN I am asked to input the city I am located in
-WHEN I input that city
-THEN I am presented with a series of categories for different activities and events possible in that city
-WHEN I go through the categories presented to me
-THEN I can select which categories are most intriguing to me
-WHEN I say yes to the activities
-THEN I am presented with recommendations that pertain to each category that I said yes to
-WHEN I see the choices
-THEN I am now given a fun schedule to plan my day around
-WHEN I don’t like the recommendations given
-THEN I can choose to populate a new random recommendation
+GIVEN a landing page with a description of the app   
+
+WHEN I first load the page   
+
+THEN I am asked to input the city I am located in   
+
+WHEN I input that city   
+
+THEN I am presented with a series of categories for different activities and events possible in that city   
+
+WHEN I go through the categories presented to me   
+
+THEN I can select which categories are most intriguing to me   
+
+WHEN I say yes to the activities   
+
+THEN I am presented with recommendations that pertain to each category that I said yes to   
+
+WHEN I see the choices   
+
+THEN I am now given a fun schedule to plan my day around   
+
+WHEN I don’t like the recommendations given   
+
+THEN I can choose to populate a new random recommendation   
+
 
 ## Demo
 
@@ -68,11 +81,13 @@ With unlimited time and resources we would like to upgrade and add a few more fe
 * Anna Cruz - (https://github.com/Amc0928)
 
 
-Project Link: (https://rmartin1985.github.io/plan-my-day/)
+## Project Link
+
+(https://rmartin1985.github.io/plan-my-day/)
 
 ## Acknowledgements 
 
-* Used Bluma for styling purposes (https://bulma.io/)
+* Used Bulma for styling purposes (https://bulma.io/)
 * Used Opentripmap for the museum, moonument, and restaurant data (https://opentripmap.io/docs)
 * Used Ticketmaster API for the concerts and sporting events data (https://developer.ticketmaster.com/)
 * Used Moment.js to help with some date formating (https://momentjs.com/)
